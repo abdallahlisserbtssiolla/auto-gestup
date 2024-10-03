@@ -47,9 +47,7 @@ echo "Modification des paramètres MariaDB..."
 sed -i "/\[mysqld\]/a innodb_buffer_pool_size = 1G" /etc/mysql/mariadb.conf.d/50-server.cnf
 sed -i "/\[mysqld\]/a skip-name-resolve" /etc/mysql/mariadb.conf.d/50-server.cnf
 
-# Télécharger Gestsup
-echo "Téléchargement de Gestsup..."
-wget -P /var/www/html https://gestsup.fr/downloads/versions/current/version/gestsup_3.2.50.zip
+
 
 # Extraire les fichiers
 echo "Extraction des fichiers..."
