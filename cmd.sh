@@ -49,20 +49,20 @@ sed -i "/\[mysqld\]/a skip-name-resolve" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # Télécharger Gestsup
 echo "Téléchargement de Gestsup..."
-wget -P /var/www/html https://gestsup.fr/downloads/versions/current/version/gestsup_3.2.X.zip
+wget -P /var/www/html https://gestsup.fr/downloads/versions/current/version/gestsup_3.2.50.zip
 
 # Extraire les fichiers
 echo "Extraction des fichiers..."
-unzip /var/www/html/gestsup_3.2.X.zip -d /var/www/html
+unzip /var/www/html/gestsup_3.2.50.zip -d /var/www/html
 
 # Suppression des fichiers inutiles
 echo "Suppression des fichiers inutiles..."
-rm /var/www/html/gestsup_3.2.X.zip
+rm /var/www/html/gestsup_3.2.50.zip
 rm /var/www/html/index.html
 
 # Modification des droits
 echo "Modification des droits pour l'installation..."
-adduser gestsup --ingroup www-data
+adduser gestsup --ingroup www-data --disabled-password
 chown -R gestsup:www-data /var/www/html/
 find /var/www/html/ -type d -exec chmod 750 {} \;
 find /var/www/html/ -type f -exec chmod 640 {} \;
